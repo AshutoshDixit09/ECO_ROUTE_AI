@@ -1,0 +1,41 @@
+# EcoRoute AI Prototype Configuration
+# 25% Progress Milestone
+
+# Multi-objective routing weights (alpha + beta + gamma = 1.0)
+weights:
+  alpha: 0.333   # Energy weight
+  beta: 0.333    # Carbon intensity weight
+  gamma: 0.334   # Latency weight
+
+# Hard SLA constraints
+sla:
+  max_latency_ms: 20.0   # Paths with total latency exceeding this bound will be rejected
+
+# Modeled power parameters (SYNTHETIC MODEL - not real hardware measurements)
+energy_model:
+  switch_idle_power_w: 30.0
+  switch_marginal_power_w_per_gbps: 5.0
+  link_idle_power_w: 2.0
+  link_marginal_power_w_per_gbps: 1.5
+
+# Regional assignments for topology switches
+regions:
+  s1: "Region-Hub"
+  s2: "Region-North"
+  s3: "Region-South"
+  s4: "Region-Hub"
+
+# Telemetry polling settings
+telemetry:
+  controller_url: "http://127.0.0.1:8080"
+  polling_interval_sec: 5
+  dpid_list: [1, 2, 3, 4]
+
+# Carbon data settings
+carbon:
+  fallback_csv: "carbon/sample_carbon_data.csv"
+  api_url: "https://api.electricitymap.org/v3/carbon-intensity/latest"
+  zone_mapping:
+    Region-Hub: "DE"
+    Region-North: "PL"       # High carbon intensity (e.g. coal/gas)
+    Region-South: "SE"       # Low carbon intensity (e.g. hydro/nuclear)

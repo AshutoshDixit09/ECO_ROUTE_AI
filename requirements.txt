@@ -1,0 +1,15 @@
+# EcoRoute AI 25% Prototype Requirements
+# Core dependencies for routing, energy modeling, carbon fetching, and knowledge graph
+networkx>=3.0
+rdflib>=7.0.0
+requests>=2.31.0
+tabulate>=0.9.0
+matplotlib>=3.7.0
+pyyaml>=6.0.1
+pytest>=7.4.0
+
+# Optional SDN controller dependency (for Ubuntu/WSL2 with Mininet)
+# On Linux, Ryu can be installed via:
+#   pip install eventlet==0.30.2 ryu
+# Or for newer Python versions:
+#   pip install git+https://github.com/faucetsdn/ryu.git

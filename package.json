@@ -1,0 +1,18 @@
+{
+  "name": "ecoroute-ai",
+  "version": "1.0.0",
+  "description": "EcoRoute AI - Carbon and Energy Aware SDN Routing Prototype",
+  "scripts": {
+    "start": "python web/server.py 8050",
+    "dev": "python web/server.py 8050",
+    "test": "pytest"
+  },
+  "keywords": [
+    "sdn",
+    "energy-aware",
+    "carbon-aware",
+    "routing"
+  ],
+  "author": "",
+  "license": "MIT"
+}
